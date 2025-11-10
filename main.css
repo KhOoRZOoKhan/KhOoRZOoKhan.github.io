@@ -1,5 +1,45 @@
-body{
-    background-color: blue;
-    
+body {
+    background-color: rgb(189, 189, 241);
+}
+#img{
+    width:700px;
+    height: 420px;
+    position: relative;
+  
+   border-radius: 25px;
 
 }
+#h1{
+    text-align: center;
+    color: purple;
+}
+
+#contact{
+    color: rgb(122, 122, 240);
+    text-align: center;
+    position: relative;
+    top: 100px;
+}
+.div{
+place-items: center;
+display: grid;
+height:50vh;
+}
+
+#massage{
+    text-align: center;
+}
+
+#result{
+    position: relative;
+    top: 1000px;
+}
+
+#video{
+   border-radius: 80px;
+    display: flex;
+    align-self: center;
+}
+
+
+
