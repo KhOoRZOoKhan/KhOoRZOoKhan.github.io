@@ -1,118 +1,320 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <link rel="icon" href="./French Picture Made By Ai.png" type="image/x-icon">
-    <meta name="google-site-verification" content="EQpsue7uVPk7OvU0QQjPsBPWcNcIzrctW9X7-bpLv2k" />
-     
-    
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=>, initial-scale=1.0">
-<title>AlirezaSamadi</title>
-    <meta name="description" content="Welcome to AlirezaSamadi's WebSite, the personal website of Alireza. Explore tutorials, projects,And etc...">
-    <meta name="keywords" content="AlirezaSamadi صمدی,علیرضا علیرضا صمدی,, Alireza, personal website,">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Alireza Samadi — Web Developer</title>
+<meta name="description" content="Official personal website of Alireza Samadi — Web Developer, MTA Mod Creator, and UI/UX Designer." />
+<meta name="keywords" content="Alireza Samadi, Web Developer, MTA, Modding, UI, UX, Portfolio, Projects" />
+<meta name="author" content="Alireza Samadi" />
 
-    
-    <link rel="stylesheet" href="./main.css">
+<style>
+:root{
+  --bg:#0b1220; --card:#0f1724; --accent:#06b6d4; --accent2:#7c3aed; --text:#e6eef6; --muted:#93a4b8;
+  --radius:14px; --gap:18px; --fw-semibold:600; --t:0.25s cubic-bezier(.2,.9,.2,1);
+  --container:95%; --sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
+}
+@media(prefers-color-scheme:light){
+  :root{
+    --bg:#f6f9fb; --card:linear-gradient(180deg,#ffffff,#f8fbff); --text:#0b1220; --muted:#485563; --accent:#0ea5b7;
+  }
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);padding:28px;transition:background var(--t);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}
+a{text-decoration:none;color:inherit;}
+.wrap{
+  display:flex;
+  flex-direction:column;
+  gap:var(--gap);
+  width:var(--container);
+  margin:0 auto;
+  align-items:center;
+}
+.profile{
+  display:flex;
+  gap:22px;
+  background:var(--card);
+  padding:26px;
+  border-radius:var(--radius);
+  align-items:center;
+  box-shadow:0 8px 30px rgba(2,6,23,0.6), inset 0 1px 0 rgba(255,255,255,0.02);
+  opacity:0;
+  transform:translateY(20px);
+  animation:fadeInUp 0.6s forwards;
+  width:100%;
+  max-width:none;
+}
+@keyframes fadeInUp{to{opacity:1;transform:translateY(0)}}
+.avatar{
+  width:108px;
+  height:108px;
+  border-radius:12px;
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  display:grid;
+  place-items:center;
+  font-weight:700;
+  font-size:34px;
+  color:#fff;
+  box-shadow:0 6px 20px rgba(12,18,30,0.6);
+}
+.intro{
+  flex:1;
+  min-width:0;
+  opacity:0;
+  transform:translateY(10px);
+  animation:fadeInUp 0.6s 0.1s forwards;
+}
+.intro h1{margin-bottom:6px;font-size:22px;}
+.intro .role{margin-bottom:14px;color:var(--muted);font-size:14px;}
+.cta-row{display:flex;gap:10px;flex-wrap:wrap;}
+.social-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding:8px 12px;
+  border-radius:10px;
+  background:rgba(255,255,255,0.03);
+  color:inherit;
+  font-size:14px;
+  border:1px solid rgba(255,255,255,0.04);
+  transition:all var(--t);
+}
+.social-btn:hover{transform:translateY(-4px);box-shadow:0 8px 20px rgba(2,6,23,0.45);}
+.aside{
+  display:flex;
+  flex-direction:column;
+  gap:var(--gap);
+  opacity:0;
+  transform:translateY(10px);
+  animation:fadeInUp 0.2s forwards;
+  width:100%;
+  max-width:none;
+}
+.card{
+  background:var(--card);
+  padding:18px;
+  border-radius:var(--radius);
+  box-shadow:0 6px 18px rgba(2,6,23,0.45);
+  transition:transform var(--t);
+  width:100%;
+}
+.card:hover{transform:translateY(-3px);}
+.projects{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:12px;
+  margin-top:12px;
+}
+.proj{
+  position:relative;
+  padding:12px;
+  border-radius:10px;
+  background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border:1px solid rgba(255,255,255,0.02);
+  overflow:hidden;
+  transition:transform var(--t);
+}
+.proj:hover{transform:translateY(-6px);}
+.proj::after{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.08);
+  opacity:0;
+  transition:opacity var(--t);
+  border-radius:10px;
+}
+.proj:hover::after{opacity:1;}
+.proj h4{margin-bottom:6px;font-size:15px;z-index:1;position:relative;}
+.proj p{margin:0;color:var(--muted);font-size:13px;z-index:1;position:relative;}
+.skills{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px;}
+.skills {
+  display: inline-flex;       
+  flex-wrap: wrap;
+  justify-content: center;   
+  gap: 12px;                  
+  margin: 12px auto;         
+}
+
+.skill {
+  position: relative;
+  font-size: 13px;
+  padding: 22px 10px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.03);
+  color: var(--muted);
+  overflow: hidden;
+}
+
+.skill::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  height:100%;
+  width:0%;
+  background:var(--accent2);
+  opacity:0.3;
+  transition:width 0.5s;
+}
+.skill:hover::before{width:100%;}
+footer{text-align:center;color:var(--muted);font-size:13px;margin-top:8px;}
+.muted{color:var(--muted);font-size:13px;}
+.sp{width:100%;height:8px;}
+.theme-toggle{display:inline-flex;gap:8px;align-items:center;padding:8px;border-radius:10px;background:rgba(255,255,255,0.02);cursor:pointer;transition:all var(--t);}
+.theme-toggle:hover{background:rgba(255,255,255,0.05);}
+a:focus, button:focus{outline:3px solid rgba(6,182,212,0.16);outline-offset:3px;border-radius:8px;}
+.links-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.links-list a {
+  display: block;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border: 1px solid rgba(255,255,255,0.02);
+  transition: transform var(--t), box-shadow var(--t);
+}
+.links-list a:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(2,6,23,0.45);
+}
+</style>
 </head>
 <body>
-    <header>
-        <h1 id="h1">Welcome to AlirezaSamadi"s Website❤️</h1>
-        
-    </header>
+<main style="width:100%">
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px">
+  <div style="display:flex;gap:12px;align-items:center">
+    <div style="font-weight:700">Alireza Samadi</div>
+    <div class="muted">Personal Website</div>
+  </div>
+  <div style="display:flex;gap:10px;align-items:center">
+    <a class="muted" href="">💡</a>
+    <button id="themeBtn" class="theme-toggle" aria-label="Toggle Theme">
+      <svg id="iconSun" width="18" height="18" viewBox="0 0 24 24" fill="none" style="display:none"><circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="2"/></svg>
+      <svg id="iconMoon" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M21 12.8A9 9 0 1111.2 3 7 7 0 0021 12.8z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+</div>
 
-    <main>
-       
-        <section id="about">
-            <h2 id="about-h2">About This Site</h2>
-            <p>This website is a simple personal site by Alireza, showcasing projects, tutorials, and Etc...</p>
-        </section>
+<div class="wrap">
+<section class="profile" aria-labelledby="profileHeading">
+  <div class="avatar" aria-hidden="true">AS</div>
+  <div class="intro">
+    <h1 id="profileHeading">Hi, I'm <strong style="font-weight:var(--fw-semibold)">Alireza Samadi</strong></h1>
+    <div class="role">Web Developer · MTA Mod Creator · UI/UX Designer</div>
+    <p class="muted">I build websites and small tools, develop MTA server systems, and focus on great user experience. Here you can see my projects and contact info.</p>
+    <div class="sp"></div>
+    <div class="cta-row">
+      <a class="social-btn" href="https://t.me/your_telegram" target="_blank">Telegram</a>
+      <a class="social-btn" href="https://github.com/your_github" target="_blank">GitHub</a>
+      <a class="social-btn" href="mailto:you@example.com" target="_blank">Email</a>
+      <a class="social-btn" href="https://linkedin.com/in/your_linkedin" target="_blank">AboutMe</a>
+    </div>
+    <div class="sp"></div>
+    <div class="skills">
+      <span class="skill">HTML</span>
+      <span class="skill">CSS</span>
+      <span class="skill">JavaScript</span>
+      <span class="skill">Lua</span>
+      <span class="skill">Python</span>
+    </div>
+  </div>
+</section>
 
-     
-            <div class="div">
-                <img id="img" src="./French Picture Made By Ai.png" alt="AI-generated French picture">
-            </div>
-        
+<aside class="aside">
+<div class="card"><h3>Summary</h3><p class="muted"> I'm Alireza Samadi,Computer Student  A 16 Year Old. i love Learning Foreign Languages Especially English. </p></div>
 
-       
-        <section id="contact">
-            
-            <p>Reach me at <strong>@SpecialSignature</strong></p>
-          <a href="https://t.me/SpecialSignature" title="Telegram" aria-label="Example">
-  <img  src="./icons8-telegram-32.png" alt="icon" style="width:32px;height:32px;display:inline-block;">
-</a>
-     
-        </section>
-    </main>
+<div class="card"><h4>Recent Projects</h4>
+<div class="projects">
+<article class="proj"><h4>MTA Server</h4><p>I tried to run a mta server i ran it in host but unfortunately i couldn't find any cheap VPS To Publish My Server<a href="www.digikala.com"></a> </p></article>
+<article class="proj"><h4>My First Personal Website</h4><p>I depeloy a  Simpe  Website Named KhOoRZOoKhan it was terrible </p></article>
+<article class="proj"><h4>Python</h4><p>i Made a ATM System By Using Python for training </p></article>
 
-    <footer>
-        <p id="copy">&copy; 2025 KhOoRZOoKhan. All rights reserved.</p>
-    </footer>
-    <style>
-body {
-    background-color:(255,255,255,0.03);
+
+</div></div>
+
+<div class="card">
+  <h4>Contact</h4>
+  <div class="links-list">
+    <a href="https://t.me/your_telegram" target="_blank">📱 Telegram — @SpecialSignature</a>
+    <a href="https://github.com/your_github" target="_blank">💻 GitHub — your_github</a>
+    <a href="mailto:you@example.com">✉️ Email — you@example.com</a>
+    <a href="https://linkedin.com/in/your_linkedin" target="_blank">🔗 LinkedIn — your_linkedin</a>
+  </div>
+</div>
+
+<footer class="card">© <span id="yr"></span> Alireza Samadi, Made with ❤️</footer>
+</aside>
+</div>
+</main>
+
+<script>
+const themeBtn=document.getElementById('themeBtn');
+const iconSun=document.getElementById('iconSun');
+const iconMoon=document.getElementById('iconMoon');
+let saved=localStorage.getItem('theme');
+let prefersDark=window.matchMedia('(prefers-color-scheme: dark)').matches;
+let isDark=saved? saved==='dark':prefersDark;
+
+function applyTheme(dark){
+  if(dark){
+    document.documentElement.style.setProperty('--bg','#071022');
+    document.documentElement.style.setProperty('--card','#0b1220');
+    iconMoon.style.display='block';
+    iconSun.style.display='none';
+    document.documentElement.style.colorScheme='dark';
+  } else {
+    document.documentElement.style.setProperty('--bg','#f6f9fb');
+    document.documentElement.style.setProperty('--card','linear-gradient(180deg,#ffffff,#f8fbff)');
+    iconMoon.style.display='none';
+    iconSun.style.display='block';
+    document.documentElement.style.colorScheme='light';
+  }
+  localStorage.setItem('theme',dark?'dark':'light');
 }
-#img{
-    width:500px;
-    height: 320px;
-    position: relative;
-   top:50px;
-   border-radius: 25px;
+applyTheme(isDark);
+themeBtn.addEventListener('click',()=>{applyTheme(localStorage.getItem('theme')==='dark'?false:true);});
+document.getElementById('yr').textContent=new Date().getFullYear();
+</script>
+<style>
+.profile .intro,
+.aside .card:not(:has(.projects)),
+.skills,
+.cta-row,
+.links-list {
+  text-align: center;
+}
 
-}
-#h1{
-    text-align: center;
-    color: purple;
-}
-
-#contact{
-    color:blueviolet;
-    text-align: center;
-    position: relative;
-    top: 100px;
-}
-.div{
-place-items: center;
-display: grid;
-height:50vh;
+.profile {
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 
-#about-h2{
- text-align: center;
- color: blueviolet;
-}
-#about{
-   text-align:center;
-
-}
-#copy{
-    text-align: center;
- position: relative;
- bottom: -200px;
- font-size:x-large;
- color: rgb(245, 144, 144);
+.cta-row {
+  justify-content: center;
 }
 
 
-
-
-
-#about{
-    color: blueviolet;
-    font-size: x-large;
-    font-weight: 500;
+.links-list a {
+  text-align: center;
 }
 
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+  gap: 12px;
+  margin-top: 12px;
+  text-align: left; 
+}
 </style>
 </body>
-    
-    
 </html>
-
-
-
-
-
-
-
-
