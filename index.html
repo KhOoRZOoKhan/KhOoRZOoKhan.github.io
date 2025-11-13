@@ -1,12 +1,14 @@
 <!doctype html>
 <html lang="en">
 <head>
+  
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Alireza Samadi — Web Developer</title>
 <meta name="description" content="Official personal website of Alireza Samadi — Web Developer, MTA Mod Creator, and UI/UX Designer." />
 <meta name="keywords" content="Alireza Samadi, Web Developer, MTA, Modding, UI, UX, Portfolio, Projects" />
 <meta name="author" content="Alireza Samadi" />
+
 
 <style>
 :root{
@@ -45,18 +47,21 @@ a{text-decoration:none;color:inherit;}
   max-width:none;
 }
 @keyframes fadeInUp{to{opacity:1;transform:translateY(0)}}
-.avatar{
+.avatar {
   width:108px;
   height:108px;
   border-radius:12px;
-  background:linear-gradient(135deg,var(--accent),var(--accent2));
-  display:grid;
-  place-items:center;
-  font-weight:700;
-  font-size:34px;
-  color:#fff;
   box-shadow:0 6px 20px rgba(12,18,30,0.6);
+  overflow:hidden; /* برای گرد شدن گوشه‌ها */
 }
+
+.avatar img.avatar-img {
+  width:100%;
+  height:100%;
+  object-fit:cover; /* تصویر کامل داخل دایره بدون کشیدگی */
+  display:block;
+}
+
 .intro{
   flex:1;
   min-width:0;
@@ -78,8 +83,27 @@ a{text-decoration:none;color:inherit;}
   font-size:14px;
   border:1px solid rgba(255,255,255,0.04);
   transition:all var(--t);
+  position: relative;
+  overflow: hidden;
 }
-.social-btn:hover{transform:translateY(-4px);box-shadow:0 8px 20px rgba(2,6,23,0.45);}
+.social-btn::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  width:0%;
+  height:100%;
+  background:var(--accent2);
+  opacity:0.2;
+  transition:width 0.5s;
+  border-radius:10px;
+  z-index:0;
+}
+.social-btn span, .social-btn svg {
+  position: relative;
+  z-index:1;
+}
+.social-btn:hover::before{width:100%;}
 .aside{
   display:flex;
   flex-direction:column;
@@ -179,10 +203,28 @@ a:focus, button:focus{outline:3px solid rgba(6,182,212,0.16);outline-offset:3px;
   background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
   border: 1px solid rgba(255,255,255,0.02);
   transition: transform var(--t), box-shadow var(--t);
+  position: relative;
+  overflow: hidden;
 }
-.links-list a:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 8px 20px rgba(2,6,23,0.45);
+.links-list a::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  width:0%;
+  height:100%;
+  background:var(--accent2);
+  opacity:0.2;
+  transition:width 0.5s;
+  border-radius:10px;
+  z-index:0;
+}
+.links-list a span {
+  position: relative;
+  z-index:1;
+}
+.links-list a:hover::before {
+  width:100%;
 }
 </style>
 </head>
@@ -190,7 +232,7 @@ a:focus, button:focus{outline:3px solid rgba(6,182,212,0.16);outline-offset:3px;
 <main style="width:100%">
 <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px">
   <div style="display:flex;gap:12px;align-items:center">
-    <div style="font-weight:700">Alireza Samadi</div>
+    <div style="font-weight:750">Alireza Samadi</div>
     <div class="muted">Personal Website</div>
   </div>
   <div style="display:flex;gap:10px;align-items:center">
@@ -204,17 +246,20 @@ a:focus, button:focus{outline:3px solid rgba(6,182,212,0.16);outline-offset:3px;
 
 <div class="wrap">
 <section class="profile" aria-labelledby="profileHeading">
-  <div class="avatar" aria-hidden="true">AS</div>
+  <div class="avatar">
+  <img src="./French Picture Made By Ai.png" alt="Alireza Samadi" class="avatar-img">
+</div>
+
   <div class="intro">
     <h1 id="profileHeading">Hi, I'm <strong style="font-weight:var(--fw-semibold)">Alireza Samadi</strong></h1>
-    <div class="role">Web Developer · MTA Mod Creator · UI/UX Designer</div>
-    <p class="muted">I build websites and small tools, develop MTA server systems, and focus on great user experience. Here you can see my projects and contact info.</p>
+    <div class="role">Web Developer & Multi Theft Auto Server Developer </div>
+    <p class="muted">I build websites and small tools, develop MTA server , and focus on great user experience. Here you can see my projects and contact info.</p>
     <div class="sp"></div>
     <div class="cta-row">
-      <a class="social-btn" href="https://t.me/your_telegram" target="_blank">Telegram</a>
-      <a class="social-btn" href="https://github.com/your_github" target="_blank">GitHub</a>
-      <a class="social-btn" href="mailto:you@example.com" target="_blank">Email</a>
-      <a class="social-btn" href="https://linkedin.com/in/your_linkedin" target="_blank">AboutMe</a>
+      <a class="social-btn" href="https://t.me/SpecialSignature" target="_blank"><span>Telegram</span></a>
+      <a class="social-btn" href="https://github.com/KhOoRZOoKhan" target="_blank"><span>GitHub</span></a>
+      <a class="social-btn" href="mailto:hamedttt568@gmail.com" target="_blank"><span>Email</span></a>
+      <a class="social-btn" href="" target="_blank"><span>AboutMe</span></a>
     </div>
     <div class="sp"></div>
     <div class="skills">
@@ -232,20 +277,19 @@ a:focus, button:focus{outline:3px solid rgba(6,182,212,0.16);outline-offset:3px;
 
 <div class="card"><h4>Recent Projects</h4>
 <div class="projects">
-<article class="proj"><h4>MTA Server</h4><p>I tried to run a mta server i ran it in host but unfortunately i couldn't find any cheap VPS To Publish My Server<a href="www.digikala.com"></a> </p></article>
-<article class="proj"><h4>My First Personal Website</h4><p>I depeloy a  Simpe  Website Named KhOoRZOoKhan it was terrible </p></article>
-<article class="proj"><h4>Python</h4><p>i Made a ATM System By Using Python for training </p></article>
-
-
+<article class="proj"><h4>MTA Server</h4><p>I tried to run a<strong>   MTA Server</strong> i ran it in host but unfortunately i couldn't find any cheap VPS To Publish My Server<a href="www.digikala.com"></a> </p></article>
+<article class="proj"><h4>My First Personal Website</h4><p>I depeloy a  Simpe <strong> Website</strong> Named KhOoRZOoKhan it was terrible </p></article>
+<article class="proj"><h4>Python</h4><p>i Made a <strong> ATM </strong> System By Using Python Only for training </p></article>
 </div></div>
 
 <div class="card">
   <h4>Contact</h4>
   <div class="links-list">
-    <a href="https://t.me/your_telegram" target="_blank">📱 Telegram — @SpecialSignature</a>
-    <a href="https://github.com/your_github" target="_blank">💻 GitHub — your_github</a>
-    <a href="mailto:you@example.com">✉️ Email — you@example.com</a>
-    <a href="https://linkedin.com/in/your_linkedin" target="_blank">🔗 LinkedIn — your_linkedin</a>
+    <a href="https://t.me/your_telegram" target="_blank"><span>📱 Telegram </span></a>
+    <a href="https://github.com/KhOoRZOoKhan" target="_blank"><span>💻 Github</a>
+
+
+  
   </div>
 </div>
 
@@ -282,6 +326,8 @@ applyTheme(isDark);
 themeBtn.addEventListener('click',()=>{applyTheme(localStorage.getItem('theme')==='dark'?false:true);});
 document.getElementById('yr').textContent=new Date().getFullYear();
 </script>
+
+
 <style>
 .profile .intro,
 .aside .card:not(:has(.projects)),
@@ -297,16 +343,13 @@ document.getElementById('yr').textContent=new Date().getFullYear();
   align-items: center;
 }
 
-
 .cta-row {
   justify-content: center;
 }
 
-
 .links-list a {
   text-align: center;
 }
-
 
 .projects {
   display: grid;
@@ -315,8 +358,58 @@ document.getElementById('yr').textContent=new Date().getFullYear();
   margin-top: 12px;
   text-align: left; 
 }
+
 </style>
+
+
+
+
+
+<style>/* --- ANIMATION ADDED (ONLY) --- */
+@keyframes enterEffect {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.96);
+    filter: blur(4px);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(-6px) scale(1.03);
+    filter: blur(0px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.profile,
+.intro,
+.aside .card,
+.projects .proj,
+.skills,
+.cta-row,
+.links-list,
+.social-btn {
+  opacity: 0;
+  animation: enterEffect 0.9s cubic-bezier(.2,.9,.2,1) forwards;
+}
+
+.profile { animation-delay: 0.1s; }
+.intro { animation-delay: 0.2s; }
+.cta-row { animation-delay: 0.3s; }
+.skills { animation-delay: 0.4s; }
+.aside .card:nth-child(1) { animation-delay: 0.5s; }
+.aside .card:nth-child(2) { animation-delay: 0.6s; }
+.aside .card:nth-child(3) { animation-delay: 0.7s; }
+.projects .proj:nth-child(1) { animation-delay: 0.8s; }
+.projects .proj:nth-child(2) { animation-delay: 0.9s; }
+.projects .proj:nth-child(3) { animation-delay: 1.0s; }
+.links-list { animation-delay: 1.1s; }
+.social-btn { animation-delay: 0.35s; }
+</style>
+
+
+
 </body>
 </html>
-
-
