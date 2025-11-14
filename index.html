@@ -449,11 +449,30 @@ document.getElementById('yr').textContent=new Date().getFullYear();
   ]
 }
 </script>
+</script>
 
+
+
+<audio id="hoverSound" src="./buble2.wav" preload="auto"></audio>
+
+
+ <script>    const hoverSound = document.getElementById('hoverSound');
+hoverSound.volume = 0.2; 
+
+document.querySelectorAll('button, a, .social-btn, .links-list a, .skill').forEach(el => {
+  el.addEventListener('mouseenter', () => {
+    try {
+      hoverSound.currentTime = 0;
+      hoverSound.play().catch(()=>{}); 
+    } catch(e) {}
+  });
+});
+</script>
 
 
 </body>
 </html>
+
 
 
 
