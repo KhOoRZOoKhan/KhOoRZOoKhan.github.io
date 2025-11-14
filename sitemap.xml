@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <url>
+    <loc>https://alirezasamadi-theta.vercel.app/</loc>
+    <lastmod>2025-11-14</lastmod>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://alirezasamadi-theta.vercel.app/#about</loc>
+    <lastmod>2025-11-14</lastmod>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://alirezasamadi-theta.vercel.app/#projects</loc>
+    <lastmod>2025-11-14</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://alirezasamadi-theta.vercel.app/#projects/mta-server</loc>
+    <lastmod>2025-11-14</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://alirezasamadi-theta.vercel.app/#projects/first-website</loc>
+    <lastmod>2025-11-14</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://alirezasamadi-theta.vercel.app/#projects/python-atm</loc>
+    <lastmod>2025-11-14</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://alirezasamadi-theta.vercel.app/#skills</loc>
+    <lastmod>2025-11-14</lastmod>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://alirezasamadi-theta.vercel.app/#contact</loc>
+    <lastmod>2025-11-14</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+</urlset>
