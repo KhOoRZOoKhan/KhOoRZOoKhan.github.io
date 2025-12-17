@@ -272,7 +272,36 @@ a:focus, button:focus{outline:3px solid rgba(6,182,212,0.16);outline-offset:3px;
 <div class="wrap">
 <section class="profile" aria-labelledby="profileHeading">
   <div class="avatar">
-  <img src="./alirezasamadi.png" alt="Alireza Samadi" class="avatar-img">
+  <!-- HTML -->
+<div class="swiper mySwiper">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide"><img src="./English Main Profile.jpg" alt="1"></div>
+    <div class="swiper-slide"><img src="./French Picture Made By Ai.png" alt="2"></div>
+    
+  </div>
+  <!-- Pagination -->
+  <div class="swiper-pagination"></div>
+</div>
+
+<!-- CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
+<style>
+.swiper-slide img {
+  width: 100%;
+  border-radius: 12px;
+}
+</style>
+
+<!-- JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+<script>
+const swiper = new Swiper('.mySwiper', {
+  loop: true,                
+  autoplay: { delay: 2000 }, 
+  pagination: { el: '.swiper-pagination', clickable: true },
+});
+</script>
+
 </div>
 
   <div class="intro">
@@ -603,7 +632,7 @@ body::before{
   pointer-events:auto;
 }
 
-
+/* Glassmorphism popup */
 .popup{
   background: rgba(19,28,43,0.6);
   border-radius:20px;
@@ -620,7 +649,7 @@ body::before{
   animation:enterEffect 0.6s forwards;
   box-sizing:border-box;
   overflow:hidden;
- 
+  
 }
 
 @keyframes enterEffect{
@@ -686,7 +715,7 @@ button.calc:hover, button.close:hover{background:var(--accent2);}
     <input type="number" id="height" placeholder="Height (cm)">
     <button class="calc" id="calcBtn">Calculate BMI</button>
     <div class="result" id="bmiResult"></div>
-    <button class="close" id="closeBtn">Close</button>
+    <button class="close" id="closeBtn">Close </button>
   </div>
 </div>
 
@@ -726,4 +755,3 @@ calcBtn.addEventListener('click',()=>{
 
 </body>
 </html>
-
