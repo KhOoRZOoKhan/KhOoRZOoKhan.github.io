@@ -285,6 +285,7 @@ a:focus, button:focus{outline:3px solid rgba(6,182,212,0.16);outline-offset:3px;
       <a class="social-btn" href="https://github.com/KhOoRZOoKhan" target="_blank"><span>GitHub</span></a>
      
       <a class="social-btn" href="" target="_blank"><span>AboutMe</span></a>
+      <button id="openBtn"><span>Open BMI</span></button>
       
     </div>
    
@@ -487,3 +488,241 @@ document.querySelectorAll('button, a, .social-btn, .links-list a, .skill').forEa
 
 
 
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BMI Glass Popup</title>
+<style>
+:root{
+  --bg:#0b1220;
+  --card:#131c2b;
+  --accent:#06b6d4;
+  --accent2:#7c3aed;
+  --text:#e6eef6;
+  --radius:14px;
+  --t:0.25s cubic-bezier(.2,.9,.2,1);
+}
+
+/* Gradient animated background + subtle texture */
+body{
+  font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  margin:0;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:linear-gradient(-45deg, #ffffff, #1b2a48, #0b1220, #131c2b);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  position: relative;
+  overflow: hidden;
+}
+
+body::before{
+  content:"";
+  position:absolute;
+  top:0; left:0; right:0; bottom:0;
+  background: url('https://www.transparenttextures.com/patterns/diagmonds.png');
+  opacity:0.05;
+  pointer-events:none;
+}
+
+@keyframes gradientBG{
+  0%{background-position:0% 50%;}
+  50%{background-position:100% 50%;}
+  100%{background-position:0% 50%;}
+}
+
+
+#openBtn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:6px;
+  padding:8px 16px;
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,0.08);
+  background:rgba(255,255,255,0.03);
+  color:var(--text);
+  cursor:pointer;
+  font-size:14px;
+  font-weight:600;
+  position:relative;
+  overflow:hidden;
+  transition:all var(--t);
+  z-index:10;
+}
+#openBtn::before{
+  content:"";
+  position:absolute;
+  top:0; left:0;
+  width:0%; height:100%;
+  background:var(--accent2);
+  opacity:0.2;
+  transition:width 0.5s;
+  border-radius:12px;
+  z-index:0;
+}
+#openBtn span{
+  position:relative;
+  z-index:1;
+}
+#openBtn:hover::before{
+  width:100%;
+}
+
+/* Overlay + blur background */
+.overlay{
+  position:fixed;
+  top:0; left:0;
+  width:100%;
+  height:100%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  opacity:0;
+  pointer-events:none;
+  transition:opacity var(--t);
+  z-index:100;
+}
+
+.overlay.active{
+  opacity:1;
+  pointer-events:auto;
+}
+
+
+.popup{
+  background: rgba(19,28,43,0.6);
+  border-radius:20px;
+  padding:30px 25px;
+  width:400px;
+  max-width:90%;
+  min-width:350px;
+  text-align:center;
+  backdrop-filter: blur(12px) saturate(180%);
+  border:1px solid rgba(255,255,255,0.15);
+  box-shadow:0 8px 32px rgba(0,0,0,0.37);
+  opacity:0;
+  transform:translateY(30px) scale(0.95);
+  animation:enterEffect 0.6s forwards;
+  box-sizing:border-box;
+  overflow:hidden;
+ 
+}
+
+@keyframes enterEffect{
+  0%{opacity:0; transform:translateY(30px) scale(0.95);}
+  60%{opacity:1; transform:translateY(-5px) scale(1.03);}
+  100%{opacity:1; transform:translateY(0) scale(1);}
+}
+
+input{
+  width:100%;
+  padding:12px;
+  border-radius:15px;
+  border:1px solid rgba(255,255,255,0.1);
+  background:rgba(255,255,255,0.1);
+  color:var(--text);
+  margin-bottom:14px;
+  text-align:center;
+  font-size:15px;
+  box-sizing:border-box; 
+}
+input:focus{border-color:var(--accent2);}
+
+button.calc, button.close{
+  padding:8px 16px;
+  min-width:80px;
+  border:none;
+  border-radius:12px;
+  background:var(--accent);
+  color:#fff;
+  cursor:pointer;
+  font-weight:600;
+  font-size:14px;
+  margin-top:8px;
+  transition:all var(--t);
+  display:inline-block;
+}
+button.calc:hover, button.close:hover{background:var(--accent2);}
+
+.result{
+  margin-top:18px;
+  font-weight:600;
+  padding:12px;
+  border-radius:12px;
+  font-size:16px;
+  opacity:0;
+  transform:translateY(10px);
+  animation:enterEffect 0.6s forwards;
+}
+.underweight{background:#facc15;color:#000;}
+.normal{background:#22c55e;color:#fff;}
+.overweight{background:#f97316;color:#fff;}
+.obese{background:#ef4444;color:#fff;}
+</style>
+</head>
+<body>
+
+
+
+<div class="overlay" id="overlay">
+  <div class="popup">
+    <h2>BMI Calculator</h2>
+    <input type="number" id="weight" placeholder="Weight (kg)">
+    <input type="number" id="height" placeholder="Height (cm)">
+    <button class="calc" id="calcBtn">Calculate BMI</button>
+    <div class="result" id="bmiResult"></div>
+    <button class="close" id="closeBtn">Close / Go to Link</button>
+  </div>
+</div>
+
+<script>
+const overlay=document.getElementById('overlay');
+const openBtn=document.getElementById('openBtn');
+const closeBtn=document.getElementById('closeBtn');
+const calcBtn=document.getElementById('calcBtn');
+const result=document.getElementById('bmiResult');
+
+openBtn.addEventListener('click',()=>{
+  overlay.classList.add('active');
+});
+
+closeBtn.addEventListener('click',()=>{
+  overlay.classList.remove('active');
+});
+
+calcBtn.addEventListener('click',()=>{
+  const weight=parseFloat(document.getElementById('weight').value);
+  const height=parseFloat(document.getElementById('height').value)/100;
+  if(!weight || !height){
+    result.textContent="Please enter valid weight and height!";
+    result.className="result";
+    return;
+  }
+  const bmi=(weight/(height*height)).toFixed(1);
+  let category="",className="";
+  if(bmi<18.5){ category="Underweight"; className="underweight";}
+  else if(bmi<25){ category="Normal"; className="normal";}
+  else if(bmi<30){ category="Overweight"; className="overweight";}
+  else{ category="Obese"; className="obese";}
+  result.textContent=`BMI: ${bmi} (${category})`;
+  result.className="result "+className;
+});
+</script>
+
+</body>
+</html>
