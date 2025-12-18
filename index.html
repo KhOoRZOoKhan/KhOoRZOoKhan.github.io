@@ -276,14 +276,16 @@ a:focus, button:focus{outline:3px solid rgba(6,182,212,0.16);outline-offset:3px;
 <div class="swiper mySwiper">
   <div class="swiper-wrapper">
     <div class="swiper-slide"><img src="./English Main Profile.jpg" alt="1"></div>
-    <div class="swiper-slide"><img src="./French Picture Made By Ai.png" alt="2"></div>
+    <div class="swiper-slide"><img src="./ignore.jfif" alt="2"></div>
+    <div class="swiper-slide"><img src="./fool.jfif" alt="2"></div>
+    <div class="swiper-slide"><img src="./proud.png" alt="2"></div>
     
   </div>
-  <!-- Pagination -->
+  
   <div class="swiper-pagination"></div>
 </div>
 
-<!-- CSS -->
+
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
 <style>
 .swiper-slide img {
@@ -292,7 +294,7 @@ a:focus, button:focus{outline:3px solid rgba(6,182,212,0.16);outline-offset:3px;
 }
 </style>
 
-<!-- JS -->
+
 <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
 <script>
 const swiper = new Swiper('.mySwiper', {
@@ -546,18 +548,26 @@ document.querySelectorAll('button, a, .social-btn, .links-list a, .skill').forEa
 
 /* Gradient animated background + subtle texture */
 body{
+
   font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
   margin:0;
-  height:100vh;
-  display:flex;
-  justify-content:center;
-  align-items:center;
+
+  /* 👇 اسکرول */
+  min-height:100vh;
+  overflow-y:auto;
+
+  /* 👇 فاصله از بالا */
+  padding-top:60px;
+
+  /* 👇 بک‌گراند انیمیشنی دست نخورده */
   background:linear-gradient(-45deg, #ffffff, #1b2a48, #0b1220, #131c2b);
-  background-size: 400% 400%;
-  animation: gradientBG 15s ease infinite;
-  position: relative;
-  overflow: hidden;
+  background-size:400% 400%;
+  animation:gradientBG 15s ease infinite;
+
+  position:relative;
+  zoom: -1;
 }
+
 
 body::before{
   content:"";
@@ -755,3 +765,772 @@ calcBtn.addEventListener('click',()=>{
 
 </body>
 </html>
+
+<!doctype html>
+<html lang="en">
+<head>
+
+
+  
+<head>
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title> AlirezaSamadi </title>
+ <meta name="description" content="Official website of Alireza Samadi — Web Developer, MTA Programmer, and UI/UX Designer. Portfolio, projects, and contact information." />
+  <meta name="keywords" content="Alireza Samadi, alirezasamadi, ALIREZASAMADI, علیرضا صمدی, Web Developer, MTA, Modding, UI, UX, Portfolio, Projects" />
+  <meta name="author" content="Alireza Samadi">
+
+  <!-- Favicon -->
+  <link rel="icon" href="./alirezasamadiicon.png" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+  <!-- Schema Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Alireza Samadi",
+    "alternateName": "علیرضا صمدی",
+    "url": "https://alirezasamadi-theta.vercel.app/",
+    "jobTitle": "Web Developer & MTA Server Developer",
+    "sameAs": [
+      "https://github.com/KhOoRZOoKhan",
+      "https://t.me/SpecialSignature"
+    ]
+  }
+  </script>
+</head>
+
+<style>
+:root{
+  --bg:#0b1220; --card:#0f1724; --accent:#06b6d4; --accent2:#7c3aed; --text:#e6eef6; --muted:#93a4b8;
+  --radius:14px; --gap:18px; --fw-semibold:600; --t:0.25s cubic-bezier(.2,.9,.2,1);
+  --container:95%; --sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
+}
+@media(prefers-color-scheme:light){
+  :root{
+    --bg:#f6f9fb; --card:linear-gradient(180deg,#ffffff,#f8fbff); --text:#0b1220; --muted:#485563; --accent:#0ea5b7;
+  }
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);padding:28px;transition:background var(--t);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}
+a{text-decoration:none;color:inherit;}
+.wrap{
+  display:flex;
+  flex-direction:column;
+  gap:var(--gap);
+  width:var(--container);
+  margin:0 auto;
+  align-items:center;
+}
+.profile{
+  display:flex;
+  gap:22px;
+  background:var(--card);
+  padding:26px;
+  border-radius:var(--radius);
+  align-items:center;
+  box-shadow:0 8px 30px rgba(2,6,23,0.6), inset 0 1px 0 rgba(255,255,255,0.02);
+  opacity:0;
+  transform:translateY(20px);
+  animation:fadeInUp 0.6s forwards;
+  width:100%;
+  max-width:none;
+}
+@keyframes fadeInUp{to{opacity:1;transform:translateY(0)}}
+.avatar {
+  width:108px;
+  height:108px;
+  border-radius:12px;
+  box-shadow:0 6px 20px rgba(12,18,30,0.6);
+  overflow:hidden; 
+}
+
+.avatar img.avatar-img {
+  width:100%;
+  height:100%;
+  object-fit:cover; 
+  display:block;
+}
+
+.intro{
+  flex:1;
+  min-width:0;
+  opacity:0;
+  transform:translateY(10px);
+  animation:fadeInUp 0.6s 0.1s forwards;
+}
+.intro h1{margin-bottom:6px;font-size:22px;}
+.intro .role{margin-bottom:14px;color:var(--muted);font-size:14px;}
+.cta-row{display:flex;gap:10px;flex-wrap:wrap;}
+.social-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding:8px 12px;
+  border-radius:10px;
+  background:rgba(255,255,255,0.03);
+  color:inherit;
+  font-size:14px;
+  border:1px solid rgba(255,255,255,0.04);
+  transition:all var(--t);
+  position: relative;
+  overflow: hidden;
+}
+.social-btn::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  width:0%;
+  height:100%;
+  background:var(--accent2);
+  opacity:0.2;
+  transition:width 0.5s;
+  border-radius:10px;
+  z-index:0;
+}
+.social-btn span, .social-btn svg {
+  position: relative;
+  z-index:1;
+}
+.social-btn:hover::before{width:100%;}
+.aside{
+  display:flex;
+  flex-direction:column;
+  gap:var(--gap);
+  opacity:0;
+  transform:translateY(10px);
+  animation:fadeInUp 0.2s forwards;
+  width:100%;
+  max-width:none;
+}
+.card{
+  background:var(--card);
+  padding:18px;
+  border-radius:var(--radius);
+  box-shadow:0 6px 18px rgba(2,6,23,0.45);
+  transition:transform var(--t);
+  width:100%;
+}
+.card:hover{transform:translateY(-3px);}
+.projects{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:12px;
+  margin-top:12px;
+}
+.proj{
+  position:relative;
+  padding:12px;
+  border-radius:10px;
+  background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border:1px solid rgba(255,255,255,0.02);
+  overflow:hidden;
+  transition:transform var(--t);
+}
+.proj:hover{transform:translateY(-6px);}
+.proj::after{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.08);
+  opacity:0;
+  transition:opacity var(--t);
+  border-radius:10px;
+}
+.proj:hover::after{opacity:1;}
+.proj h4{margin-bottom:6px;font-size:15px;z-index:1;position:relative;}
+.proj p{margin:0;color:var(--muted);font-size:13px;z-index:1;position:relative;}
+.skills{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px;}
+.skills {
+  display: inline-flex;       
+  flex-wrap: wrap;
+  justify-content: center;   
+  gap: 10px;                  
+  margin: 12px auto;         
+}
+
+.skill {
+  position: relative;
+  font-size: 13px;
+  padding: 22px 10px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.03);
+  color: var(--muted);
+  overflow: hidden;
+}
+
+.skill::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  height:100%;
+  width:0%;
+  background:var(--accent2);
+  opacity:0.3;
+  transition:width 0.5s;
+}
+.skill:hover::before{width:100%;}
+footer{text-align:center;color:var(--muted);font-size:13px;margin-top:8px;}
+.muted{color:var(--muted);font-size:13px;}
+.sp{width:100%;height:8px;}
+.theme-toggle{display:inline-flex;gap:8px;align-items:center;padding:8px;border-radius:10px;background:rgba(255,255,255,0.02);cursor:pointer;transition:all var(--t);}
+.theme-toggle:hover{background:rgba(255,255,255,0.05);}
+a:focus, button:focus{outline:3px solid rgba(6,182,212,0.16);outline-offset:3px;border-radius:8px;}
+.links-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.links-list a {
+  display: block;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border: 1px solid rgba(255,255,255,0.02);
+  transition: transform var(--t), box-shadow var(--t);
+  position: relative;
+  overflow: hidden;
+}
+.links-list a::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  width:0%;
+  height:100%;
+  background:var(--accent2);
+  opacity:0.2;
+  transition:width 0.5s;
+  border-radius:10px;
+  z-index:0;
+}
+.links-list a span {
+  position: relative;
+  z-index:1;
+}
+.links-list a:hover::before {
+  width:100%;
+}
+</style>
+</head>
+<body>
+<main style="width:100%">
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px">
+  <div style="display:flex;gap:12px;align-items:center">
+    <div style="font-weight:750">Alireza Samadi</div>
+    <div class="muted">Personal Website</div>
+  </div>
+  <div style="display:flex;gap:10px;align-items:center">
+    <a class="muted" href="">🌐</a>
+    <button id="themeBtn" class="theme-toggle" aria-label="Toggle Theme">
+      <svg id="iconSun" width="18" height="18" viewBox="0 0 24 24" fill="none" style="display:none"><circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="2"/></svg>
+      <svg id="iconMoon" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M21 12.8A9 9 0 1111.2 3 7 7 0 0021 12.8z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+</div>
+
+<div class="wrap">
+<section class="profile" aria-labelledby="profileHeading">
+  <div class="avatar">
+  <!-- HTML -->
+<div class="swiper mySwiper">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide"><img src="./English Main Profile.jpg" alt="1"></div>
+    <div class="swiper-slide"><img src="./ignore.jfif" alt="2"></div>
+    <div class="swiper-slide"><img src="./fool.jfif" alt="2"></div>
+    <div class="swiper-slide"><img src="./proud.png" alt="2"></div>
+    
+  </div>
+  
+  <div class="swiper-pagination"></div>
+</div>
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
+<style>
+.swiper-slide img {
+  width: 100%;
+  border-radius: 12px;
+}
+</style>
+
+
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+<script>
+const swiper = new Swiper('.mySwiper', {
+  loop: true,                
+  autoplay: { delay: 2000 }, 
+  pagination: { el: '.swiper-pagination', clickable: true },
+});
+</script>
+
+</div>
+
+  <div class="intro">
+    <h1 id="profileHeading">Hi, I'm <strong style="font-weight:var(--fw-semibold)">Alireza Samadi</strong></h1>
+    <div class="role">Web Developer & Multi Theft Auto Server Developer </div>
+    <p class="muted">I build websites and small tools, develop MTA server , and focus on great user experience. Here you can see my projects and contact info.</p>
+    <div class="sp"></div>
+    <div class="cta-row">
+      <a class="social-btn" href="https://t.me/SpecialSignature" target="_blank"><span>Telegram</span></a>
+      <a class="social-btn" href="https://github.com/KhOoRZOoKhan" target="_blank"><span>GitHub</span></a>
+     
+      <a class="social-btn" href="" target="_blank"><span>AboutMe</span></a>
+      <button id="openBtn"><span>Open BMI</span></button>
+      
+    </div>
+   
+
+    <div class="sp"></div>
+    <div class="skills">
+      <span class="skill">HTML</span>
+      <span class="skill">CSS</span>
+      <span class="skill">JavaScript</span>
+      <span class="skill">Lua</span>
+      <span class="skill">Python</span>
+    </div>
+  </div>
+</section>
+
+<aside class="aside">
+<div class="card"><h3>Summary</h3><p class="muted"> I'm Alireza Samadi,Computer Student  A 16 Year Old. i love Learning Foreign Languages Especially English. </p></div>
+
+<div class="card"><h4>Recent Projects</h4>
+<div class="projects">
+<article class="proj"><h4>MTA Server</h4><p>I tried to run a<strong>   MTA Server</strong> i ran it in host but unfortunately i couldn't find any cheap VPS To Publish My Server<a href="www.digikala.com"></a> </p></article>
+<article class="proj"><h4>My First Personal Website</h4><p>I depeloy a  Simpe <strong> Website</strong> Named KhOoRZOoKhan it was terrible </p></article>
+<article class="proj"><h4>Python</h4><p><strong>@SpecialSignature_bot</strong> My Latest Robot Telegram That Can Help you to make PDF Files</p></article>
+</div></div>
+
+<div class="card">
+  <h4>Contact</h4>
+  <div class="links-list">
+    <a href="https://t.me/your_telegram" target="_blank"><span>📱 Telegram </span></a>
+    <a href="https://github.com/KhOoRZOoKhan" target="_blank"><span>💻 Github</a>
+
+
+  
+  </div>
+</div>
+
+<footer class="card">© <span id="yr"></span> Alireza Samadi, Made with ❤️</footer>
+</aside>
+</div>
+</main>
+
+<script>
+const themeBtn=document.getElementById('themeBtn');
+const iconSun=document.getElementById('iconSun');
+const iconMoon=document.getElementById('iconMoon');
+let saved=localStorage.getItem('theme');
+let prefersDark=window.matchMedia('(prefers-color-scheme: dark)').matches;
+let isDark=saved? saved==='dark':prefersDark;
+
+function applyTheme(dark){
+  if(dark){
+    document.documentElement.style.setProperty('--bg','#071022');
+    document.documentElement.style.setProperty('--card','#0b1220');
+    iconMoon.style.display='block';
+    iconSun.style.display='none';
+    document.documentElement.style.colorScheme='dark';
+  } else {
+    document.documentElement.style.setProperty('--bg','#f6f9fb');
+    document.documentElement.style.setProperty('--card','linear-gradient(180deg,#ffffff,#f8fbff)');
+    iconMoon.style.display='none';
+    iconSun.style.display='block';
+    document.documentElement.style.colorScheme='light';
+  }
+  localStorage.setItem('theme',dark?'dark':'light');
+}
+applyTheme(isDark);
+themeBtn.addEventListener('click',()=>{applyTheme(localStorage.getItem('theme')==='dark'?false:true);});
+document.getElementById('yr').textContent=new Date().getFullYear();
+</script>
+
+
+<style>
+.profile .intro,
+.aside .card:not(:has(.projects)),
+.skills,
+.cta-row,
+.links-list {
+  text-align: center;
+}
+
+.profile {
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cta-row {
+  justify-content: center;
+}
+
+.links-list a {
+  text-align: center;
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+  gap: 12px;
+  margin-top: 12px;
+  text-align: left; 
+}
+
+</style>
+
+
+
+
+
+<style>/* --- ANIMATION ADDED (ONLY) --- */
+@keyframes enterEffect {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.96);
+    filter: blur(4px);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(-6px) scale(1.03);
+    filter: blur(0px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.profile,
+.intro,
+.aside .card,
+.projects .proj,
+.skills,
+.cta-row,
+.links-list,
+.social-btn {
+  opacity: 0;
+  animation: enterEffect 0.9s cubic-bezier(.2,.9,.2,1) forwards;
+}
+
+.profile { animation-delay: 0.1s; }
+.intro { animation-delay: 0.2s; } 
+.cta-row { animation-delay: 0.3s; }
+.skills { animation-delay: 0.4s; }
+.aside .card:nth-child(1) { animation-delay: 0.5s; }
+.aside .card:nth-child(2) { animation-delay: 0.6s; }
+.aside .card:nth-child(3) { animation-delay: 0.7s; }
+.projects .proj:nth-child(1) { animation-delay: 0.8s; }
+.projects .proj:nth-child(2) { animation-delay: 0.9s; }
+.projects .proj:nth-child(3) { animation-delay: 1.0s; }
+.links-list { animation-delay: 1.1s; }
+.social-btn { animation-delay: 0.35s; }
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://alirezasamadi-theta.vercel.app/",
+  "@type": "Person",
+  "name": "Alireza Samadi",
+  "alternateName": "علیرضا صمدی",
+  "url": "https://alirezasamadi-theta.vercel.app/",
+  "jobTitle": "Web Developer & MTA Server Developer",
+  "sameAs": [
+    "https://github.com/KhOoRZOoKhan",
+    "https://t.me/SpecialSignature"
+  ]
+}
+</script>
+</script>
+
+
+
+<audio id="hoverSound" src="./buble2.wav" preload="auto"></audio>
+
+
+ <script>    const hoverSound = document.getElementById('hoverSound');
+hoverSound.volume = 0.2; 
+
+document.querySelectorAll('button, a, .social-btn, .links-list a, .skill').forEach(el => {
+  el.addEventListener('mouseenter', () => {
+    try {
+      hoverSound.currentTime = 0;
+      hoverSound.play().catch(()=>{}); 
+    } catch(e) {}
+  });
+});
+</script>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BMI Glass Popup</title>
+<style>
+:root{
+  --bg:#0b1220;
+  --card:#131c2b;
+  --accent:#06b6d4;
+  --accent2:#7c3aed;
+  --text:#e6eef6;
+  --radius:14px;
+  --t:0.25s cubic-bezier(.2,.9,.2,1);
+}
+
+/* Gradient animated background + subtle texture */
+body{
+
+  font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  margin:0;
+
+  /* 👇 اسکرول */
+  min-height:100vh;
+  overflow-y:auto;
+
+  /* 👇 فاصله از بالا */
+  padding-top:60px;
+
+  /* 👇 بک‌گراند انیمیشنی دست نخورده */
+  background:linear-gradient(-45deg, #ffffff, #1b2a48, #0b1220, #131c2b);
+  background-size:400% 400%;
+  animation:gradientBG 15s ease infinite;
+
+  position:relative;
+  zoom: -1;
+}
+
+
+body::before{
+  content:"";
+  position:absolute;
+  top:0; left:0; right:0; bottom:0;
+  background: url('https://www.transparenttextures.com/patterns/diagmonds.png');
+  opacity:0.05;
+  pointer-events:none;
+}
+
+@keyframes gradientBG{
+  0%{background-position:0% 50%;}
+  50%{background-position:100% 50%;}
+  100%{background-position:0% 50%;}
+}
+
+
+#openBtn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:6px;
+  padding:8px 16px;
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,0.08);
+  background:rgba(255,255,255,0.03);
+  color:var(--text);
+  cursor:pointer;
+  font-size:14px;
+  font-weight:600;
+  position:relative;
+  overflow:hidden;
+  transition:all var(--t);
+  z-index:10;
+}
+#openBtn::before{
+  content:"";
+  position:absolute;
+  top:0; left:0;
+  width:0%; height:100%;
+  background:var(--accent2);
+  opacity:0.2;
+  transition:width 0.5s;
+  border-radius:12px;
+  z-index:0;
+}
+#openBtn span{
+  position:relative;
+  z-index:1;
+}
+#openBtn:hover::before{
+  width:100%;
+}
+
+/* Overlay + blur background */
+.overlay{
+  position:fixed;
+  top:0; left:0;
+  width:100%;
+  height:100%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  opacity:0;
+  pointer-events:none;
+  transition:opacity var(--t);
+  z-index:100;
+}
+
+.overlay.active{
+  opacity:1;
+  pointer-events:auto;
+}
+
+/* Glassmorphism popup */
+.popup{
+  background: rgba(19,28,43,0.6);
+  border-radius:20px;
+  padding:30px 25px;
+  width:400px;
+  max-width:90%;
+  min-width:350px;
+  text-align:center;
+  backdrop-filter: blur(12px) saturate(180%);
+  border:1px solid rgba(255,255,255,0.15);
+  box-shadow:0 8px 32px rgba(0,0,0,0.37);
+  opacity:0;
+  transform:translateY(30px) scale(0.95);
+  animation:enterEffect 0.6s forwards;
+  box-sizing:border-box;
+  overflow:hidden;
+  
+}
+
+@keyframes enterEffect{
+  0%{opacity:0; transform:translateY(30px) scale(0.95);}
+  60%{opacity:1; transform:translateY(-5px) scale(1.03);}
+  100%{opacity:1; transform:translateY(0) scale(1);}
+}
+
+input{
+  width:100%;
+  padding:12px;
+  border-radius:15px;
+  border:1px solid rgba(255,255,255,0.1);
+  background:rgba(255,255,255,0.1);
+  color:var(--text);
+  margin-bottom:14px;
+  text-align:center;
+  font-size:15px;
+  box-sizing:border-box; 
+}
+input:focus{border-color:var(--accent2);}
+
+button.calc, button.close{
+  padding:8px 16px;
+  min-width:80px;
+  border:none;
+  border-radius:12px;
+  background:var(--accent);
+  color:#fff;
+  cursor:pointer;
+  font-weight:600;
+  font-size:14px;
+  margin-top:8px;
+  transition:all var(--t);
+  display:inline-block;
+}
+button.calc:hover, button.close:hover{background:var(--accent2);}
+
+.result{
+  margin-top:18px;
+  font-weight:600;
+  padding:12px;
+  border-radius:12px;
+  font-size:16px;
+  opacity:0;
+  transform:translateY(10px);
+  animation:enterEffect 0.6s forwards;
+}
+.underweight{background:#facc15;color:#000;}
+.normal{background:#22c55e;color:#fff;}
+.overweight{background:#f97316;color:#fff;}
+.obese{background:#ef4444;color:#fff;}
+</style>
+</head>
+<body>
+
+
+
+<div class="overlay" id="overlay">
+  <div class="popup">
+    <h2>BMI Calculator</h2>
+    <input type="number" id="weight" placeholder="Weight (kg)">
+    <input type="number" id="height" placeholder="Height (cm)">
+    <button class="calc" id="calcBtn">Calculate BMI</button>
+    <div class="result" id="bmiResult"></div>
+    <button class="close" id="closeBtn">Close </button>
+  </div>
+</div>
+
+<script>
+const overlay=document.getElementById('overlay');
+const openBtn=document.getElementById('openBtn');
+const closeBtn=document.getElementById('closeBtn');
+const calcBtn=document.getElementById('calcBtn');
+const result=document.getElementById('bmiResult');
+
+openBtn.addEventListener('click',()=>{
+  overlay.classList.add('active');
+});
+
+closeBtn.addEventListener('click',()=>{
+  overlay.classList.remove('active');
+});
+
+calcBtn.addEventListener('click',()=>{
+  const weight=parseFloat(document.getElementById('weight').value);
+  const height=parseFloat(document.getElementById('height').value)/100;
+  if(!weight || !height){
+    result.textContent="Please enter valid weight and height!";
+    result.className="result";
+    return;
+  }
+  const bmi=(weight/(height*height)).toFixed(1);
+  let category="",className="";
+  if(bmi<18.5){ category="Underweight"; className="underweight";}
+  else if(bmi<25){ category="Normal"; className="normal";}
+  else if(bmi<30){ category="Overweight"; className="overweight";}
+  else{ category="Obese"; className="obese";}
+  result.textContent=`BMI: ${bmi} (${category})`;
+  result.className="result "+className;
+});
+</script>
+
+</body>
+</html>
+
